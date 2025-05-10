@@ -77,7 +77,7 @@ namespace ContactsApp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ContactsApp;component/newcontactwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ContactsApp;V1.0.0.0;component/newcontactwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\NewContactWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
