@@ -24,8 +24,10 @@ namespace ContactsApp
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void saveButton_Click(object sender, RoutedEventArgs e)
         {
+            //Save contact and close Window
+            Close();
 
         }
     }

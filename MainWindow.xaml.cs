@@ -18,6 +18,14 @@ public partial class MainWindow : Window
 {
     public MainWindow()
     {
-        InitializeComponent();
+
+    }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        NewContactWindow newContactWindow = new();
+        newContactWindow.ShowDialog();
+
+        //newContactWindow.Show(); allows you to use multiple windows.
     }
 }
