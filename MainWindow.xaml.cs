@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using ContactsApp.Models;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,7 +19,7 @@ public partial class MainWindow : Window
 {
     public MainWindow()
     {
-
+        ReadDatabase();
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -27,5 +28,16 @@ public partial class MainWindow : Window
         newContactWindow.ShowDialog();
 
         //newContactWindow.Show(); allows you to use multiple windows.
+
+        ReadDatabase();
+    }
+
+    void ReadDatabase()
+    {
+        using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.databasePath))
+        {
+            conn.CreateTable<Contact>();
+            List<Contact> contacts = conn.Table<Contact>().ToList();
+        }
     }
 }
