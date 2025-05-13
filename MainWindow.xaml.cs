@@ -17,9 +17,11 @@ namespace ContactsApp;
 /// </summary>
 public partial class MainWindow : Window
 {
+    List<Contact> contacts;
     public MainWindow()
     {
         InitializeComponent();
+        contacts = new List<Contact>();
         ReadDatabase();
     }
 
@@ -35,7 +37,7 @@ public partial class MainWindow : Window
 
     void ReadDatabase()
     {
-        List<Contact> contacts;
+
         using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.databasePath))
         {
             conn.CreateTable<Contact>();
@@ -46,5 +48,14 @@ public partial class MainWindow : Window
         {
             contactsListView.ItemsSource = contacts;
         }
+    }
+
+    private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        TextBox searchTextBox = sender as TextBox;
+
+        List<Contact> filteredList = contacts.Where(c => c.Name.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
+
+        contactsListView.ItemsSource = filteredList;
     }
 }
