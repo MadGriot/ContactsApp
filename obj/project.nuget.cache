@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p0bq1BuQuqw=",
+  "dgSpecHash": "XlhPOgglnjE=",
   "success": true,
   "projectFilePath": "C:\\Users\\Insan\\source\\repos\\Sandbox\\ContactsApp\\ContactsApp.csproj",
   "expectedPackageFiles": [
@@ -11,12 +11,5 @@
     "C:\\Users\\Insan\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.2\\sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512",
     "C:\\Users\\Insan\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "No Authorization header detected"
-    }
-  ]
+  "logs": []
 }
